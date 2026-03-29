@@ -27,7 +27,7 @@ function MainApp() {
     <div>
       <div className="monitor">
         <div className="title-bar">
-          <span>IVY'S WARDROBE</span>
+          <span>CHER'S WARDROBE</span>
           <span className="fall-fashions">IVY'S FASHION</span>
         </div>
 

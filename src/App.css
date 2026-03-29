@@ -527,45 +527,77 @@ body {
 .delete-outfit-btn:hover {
   background: #c0c0c0;
 }
-
-/* ── LOADING SCREEN ── */
 .loading-screen {
   width: 100vw;
   height: 100vh;
-  background: #0a0a1a;
+  background: #080818;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.hanger {
+  position: absolute;
+  opacity: 0.5;
+  filter: drop-shadow(0 0 8px #4169E1);
+  animation: float linear infinite;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0px) rotate(-10deg); }
+  50%  { transform: translateY(-18px) rotate(10deg); }
+  100% { transform: translateY(0px) rotate(-10deg); }
+}
+
+.loading-content {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 24px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='100' viewBox='0 0 120 100'%3E%3Cpath d='M60 15 Q60 8 67 8 Q74 8 74 15 Q74 20 60 28 Q46 20 46 15 Q46 8 53 8 Q60 8 60 15Z M20 70 L60 28 L100 70' stroke='%234169E1' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3Cpath d='M18 70 L102 70' stroke='%234169E1' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-size: 120px 100px;
+  gap: 16px;
 }
 
 .loading-title {
   font-family: 'Press Start 2P', monospace;
-  font-size: 1rem;
-  color: #FF69B4;
+  font-size: 1.3rem;
+  color: #ffffff;
   text-align: center;
-  line-height: 2.2;
-  text-shadow: 0 0 10px #FF69B4;
-  z-index: 1;
+  line-height: 2;
+  letter-spacing: 4px;
+  text-shadow: 0 0 20px #4169E1, 0 0 40px #4169E1;
+}
+
+.loading-sub {
+  font-family: 'VT323', monospace;
+  font-size: 1.3rem;
+  color: #6fa3ef;
+  letter-spacing: 2px;
 }
 
 .loading-bar-container {
-  width: 300px;
-  height: 20px;
-  border: 3px solid #4169E1;
-  z-index: 1;
+  width: 280px;
+  height: 16px;
+  border: 2px solid #4169E1;
+  background: #000;
+  box-shadow: 0 0 10px #4169E1;
 }
 
 .loading-bar {
   height: 100%;
-  background: #4169E1;
+  background: linear-gradient(to right, #4169E1, #87CEEB);
   animation: load 2s linear forwards;
 }
 
-@keyframes load { from { width: 0%; } to { width: 100%; } }
+@keyframes load {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
 
 .category-grid-item .delete-item-btn {
   display: none;
