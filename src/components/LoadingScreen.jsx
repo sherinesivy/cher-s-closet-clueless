@@ -38,7 +38,7 @@ function LoadingScreen() {
         </svg>
       ))}
       <div className="loading-content">
-        <p className="loading-title">IVY'S<br />WARDROBE</p>
+        <p className="loading-title">CHER'S<br />WARDROBE</p>
         <p className="loading-sub">loading your closet...</p>
         <div className="loading-bar-container">
           <div className="loading-bar" />
